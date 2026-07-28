@@ -1,48 +1,33 @@
-# 🌌 FENTEZ - Personal Link Tree Site
+# FENTEZ - Personal Link Tree
 
-A sleek, modern, and highly interactive personal link tree mini-site. Built with beautiful glassmorphism design, smooth 3D hover effects, and a dynamic particle background. 
+[English](#english) | [Українська](#українська)
 
-## ✨ Features
+---
 
-- **🌓 Auto Light/Dark Mode**: Seamlessly adapts to your system preferences. Includes a manual toggle button that remembers your choice.
-- **🪟 Glassmorphism UI**: Beautiful, frosted-glass card effect using modern CSS backdrop filters.
-- **🧊 3D Tilt Effect**: Interactive profile card that smoothly tracks your mouse movement.
-- **✨ Dynamic Particle Background**: A lightweight, high-DPI (Retina-ready) canvas-based animated background that adapts its color to the current theme.
-- **🏷️ Title Animation**: Dynamic browser tab title that catches attention.
-- **🟢 Pulsing Status**: Animated "Online" status indicator for a lively feel.
-- **⚡ Zero Dependencies**: Pure Vanilla HTML, CSS, and JavaScript. No bulky frameworks or libraries!
+## English
 
-## 🛠️ Tech Stack
+This is my personal mini-site (link tree) where I keep all my important links. I wanted to make something simple but cool-looking, without using heavy frameworks.
 
-- **HTML5**: Semantic and clean structure.
-- **CSS3**: CSS Variables for themes, Flexbox, Keyframe Animations, and Media Queries.
-- **JavaScript (ES6+)**: Canvas API for particles, DOM manipulation, `localStorage` for saving theme preferences, and High-DPI screen support.
-- **FontAwesome**: Scalable vector icons.
-- **Google Fonts**: Modern typography (Outfit).
+### What's inside:
+- **Clean design**: A glass-like card effect over an animated canvas background.
+- **Light/Dark mode**: Automatically adapts to your system theme, but you can also toggle it manually. The choice is saved in your browser.
+- **3D effect**: The card slightly tilts when you move your mouse over it.
+- **No dependencies**: Written in pure HTML, CSS, and vanilla JavaScript. 
 
-## 📂 Project Structure
+### How to use
+You don't need to install anything. Just download or clone the repo and open `index.html` in your browser. If you want to use this for yourself, simply change the links in `index.html` and replace the avatar image in the `image` folder.
 
-```text
-.
-├── index.html       # Main HTML entry point
-├── style.css        # Main stylesheet (themes, glassmorphism, layouts)
-├── script.js        # Logic (particles, 3D tilt, theme switcher)
-├── image/           # Directory for avatars and favicons
-└── README.md        # Project documentation
-```
+---
 
-## 💻 Local Development
+## Українська
 
-1. Clone this repository or download the source code.
-2. Open `index.html` in your favorite web browser.
-3. No build tools or servers are required—it works right out of the box!
+Це мій персональний міні-сайт (link tree), де зібрані мої основні посилання. Я хотів зробити щось просте, але щоб виглядало прикольно і без використання важких фреймворків.
 
-## 🎨 Customization
+### Що тут є:
+- **Чистий дизайн**: Ефект матового скла на фоні анімованих частинок (Canvas).
+- **Світла/Темна тема**: Автоматично підлаштовується під вашу систему. Також є кнопка для ручного перемикання, і ваш вибір зберігається у браузері.
+- **3D ефект**: Картка трохи нахиляється, коли ви рухаєте мишкою.
+- **Жодних залежностей**: Написано на чистому HTML, CSS та JavaScript.
 
-- **Colors & Themes**: Easily change the themes by modifying the CSS variables (`--primary`, `--bg-dark`, etc.) under `:root[data-theme="dark"]` and `:root[data-theme="light"]` in `style.css`.
-- **Links**: Update the `href` attributes in the `.links-grid` inside `index.html`.
-- **Avatar**: Replace `image/avatar.jpg` with your own image.
-
-## 📄 License
-
-This project is open-source and available under the [MIT License](LICENSE).
+### Як використовувати
+Нічого встановлювати не потрібно. Просто завантажте файли і відкрийте `index.html` у браузері. Якщо хочете взяти сайт для себе, просто замініть посилання у файлі `index.html` і картинку профілю в папці `image`.
