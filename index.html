@@ -1,72 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="image/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="image/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="image/favicon-16x16.png"
-    />
     <meta charset="UTF-8" />
-    <script src="jquery.js"></script>
-    <script src="titleanim.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>my links</title>
+    <title>FENTEZ | Links</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png" />
   </head>
   <body>
-    <div id="stars-container"></div>
-
-    <div class="card">
-      <div class="header">
-        <div class="avatar">
-          <img src="image/avatar.jpg" alt="Avatar" />
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
+    <canvas id="bg-canvas"></canvas>
+    <div class="card" id="tilt-card">
+      <div class="card-content">
+        <div class="profile-header">
+          <div class="avatar-container">
+            <img src="image/avatar.jpg" alt="FENTEZ Avatar" class="avatar" />
+            <div class="status-indicator" title="Online"></div>
+          </div>
+          <div class="info">
+            <h1>FENTEZ <span class="flag">🇺🇦</span></h1>
+            <p class="subtitle">私の光はどこにありますか</p>
+            <div class="badges">
+              <span class="badge"><i class="fas fa-code"></i> vibecoder</span>
+              <span class="badge"><i class="fas fa-gamepad"></i> Gamer</span>
+            </div>
+          </div>
         </div>
-        <div class="nick">
-          <h1>FENTEZ 🇺🇦</h1>
-          <div class="status">私の光はどこにありますか</div>
+        <div class="links-grid">
+          <a href="https://t.me/fentezua" class="link-btn telegram" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper"><i class="fab fa-telegram-plane"></i></div>
+            <span class="link-text">Telegram</span>
+            <i class="fas fa-external-link-alt hover-icon"></i>
+          </a>
+          <a href="https://instagram.com/max.hapon" class="link-btn instagram" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper"><i class="fab fa-instagram"></i></div>
+            <span class="link-text">Instagram</span>
+            <i class="fas fa-external-link-alt hover-icon"></i>
+          </a>
+          <a href="https://steamcommunity.com/id/marko_jenkins" class="link-btn steam" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper"><i class="fab fa-steam"></i></div>
+            <span class="link-text">Steam</span>
+            <i class="fas fa-external-link-alt hover-icon"></i>
+          </a>
+          <a href="https://discord.com/users/664172314602110976" class="link-btn discord" target="_blank" rel="noopener noreferrer">
+            <div class="icon-wrapper"><i class="fab fa-discord"></i></div>
+            <span class="link-text">Discord</span>
+            <i class="fas fa-external-link-alt hover-icon"></i>
+          </a>
         </div>
-      </div>
-
-      <div class="socials">
-        <a href="https://t.me/fentezua" class="btn telegram">
-          <i class="fab fa-telegram"></i>
-          <span>Telegram</span>
-        </a>
-        <a href="https://instagram.com/max.hapon" class="btn instagram">
-          <i class="fab fa-instagram"></i>
-          <span>Instagram</span>
-        </a>
-        <a href="https://steamcommunity.com/id/marko_jenkins" class="btn steam">
-          <i class="fab fa-steam"></i>
-          <span>Steam</span>
-        </a>
-        <a
-          href="https://discord.com/users/664172314602110976"
-          class="btn discord"
-        >
-          <i class="fab fa-discord"></i>
-          <span>Discord</span>
-        </a>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>
-
