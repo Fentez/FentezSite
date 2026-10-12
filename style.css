@@ -247,8 +247,7 @@ body {
   background: var(--icon-hover);
 }
 
-.telegram:hover .icon-wrapper { color: #0088cc; text-shadow: 0 0 10px rgba(0,136,204,0.5); }
-.instagram:hover .icon-wrapper { color: #e1306c; text-shadow: 0 0 10px rgba(225,48,108,0.5); }
+.github:hover .icon-wrapper { color: var(--text-main); text-shadow: 0 0 10px rgba(150,150,150,0.5); }
 .steam:hover .icon-wrapper { color: var(--text-main); text-shadow: 0 0 10px rgba(150,150,150,0.5); }
 .discord:hover .icon-wrapper { color: #5865F2; text-shadow: 0 0 10px rgba(88,101,242,0.5); }
 
