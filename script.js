@@ -197,7 +197,7 @@
     pub(e.clientX / W, e.clientY / H, n);
   });
 
-  const HB = 'https://abacus.jasoncameron.dev/', HP = 'fentez-site-9c44g445633f3f1a/hearts';
+  const HB = 'https://abacus.jasoncameron.dev/', HP = 'fentez-site-9c44g44563f3f1a/hearts';
   const av = document.querySelector('.avatar-wrap'), hc = document.getElementById('hc');
   let heart = 0, hq = 0, hout = 0, hwait = 0, hflight = 0, hfail = 0;
   try { hq = Math.min(40, Math.max(0, parseInt(localStorage.getItem('hq'), 10) || 0)); } catch (e) {}
