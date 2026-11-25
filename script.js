@@ -464,7 +464,7 @@
     });
   });
 
-  const TOPIC = "fentez-sky-7c2f9sd59hjf83jf83j8fj39lblf;",
+  const TOPIC = "fentez-sky-7c2f9a;",
     me = Math.random().toString(36).slice(2, 8);
   let sent = 0;
   function pub(x, y, n) {
