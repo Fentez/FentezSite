@@ -108,7 +108,7 @@
   }
   requestAnimationFrame(frame);
 
-  let ac, master, on = false, vol = .67;
+  let ac, master, fade, on = false, vol = .67;
   const LEVEL = .5;
   const SCALE = [261.6, 293.7, 329.6, 392, 440, 523.3, 587.3, 659.3, 784, 880];
   const sbtn = document.getElementById('sound-toggle');
@@ -117,10 +117,11 @@
     if (ac) return;
     ac = new (window.AudioContext || window.webkitAudioContext)();
     master = ac.createGain(); master.gain.value = 0;
+    fade = ac.createGain(); fade.connect(ac.destination);
     const lp = ac.createBiquadFilter(), d = ac.createDelay(), dl = ac.createBiquadFilter(), fb = ac.createGain(), wet = ac.createGain();
     lp.type = 'lowpass'; lp.frequency.value = 2200; dl.type = 'lowpass'; dl.frequency.value = 1400;
     d.delayTime.value = .42; fb.gain.value = .45; wet.gain.value = .45;
-    master.connect(lp); lp.connect(ac.destination); lp.connect(d); d.connect(dl); dl.connect(fb); fb.connect(d); dl.connect(wet); wet.connect(ac.destination);
+    master.connect(lp); lp.connect(fade); lp.connect(d); d.connect(dl); dl.connect(fb); fb.connect(d); dl.connect(wet); wet.connect(fade);
     droneF = ac.createBiquadFilter(); droneF.type = 'lowpass'; droneF.frequency.value = 900;
 
     const dg = ac.createGain(); dg.gain.value = .012;
@@ -149,6 +150,18 @@
   sbtn.addEventListener('click', () => {
     if (!on && vol === 0) { vol = .67; vslider.value = 67; }
     setSound(!on); tone(SCALE[6], .8, 'sine', .08);
+  });
+
+  let sleepT = 0;
+  document.addEventListener('visibilitychange', () => {
+    if (!ac) return;
+    clearTimeout(sleepT);
+    if (document.hidden) {
+      fade.gain.setTargetAtTime(0, ac.currentTime, .3);
+      sleepT = setTimeout(() => { if (document.hidden) ac.suspend(); }, 1800);
+    } else {
+      ac.resume().then(() => fade.gain.setTargetAtTime(1, ac.currentTime, .4));
+    }
   });
 
   const vslider = document.getElementById('vol');
@@ -184,7 +197,7 @@
     pub(e.clientX / W, e.clientY / H, n);
   });
 
-  const HB = 'https://abacus.jasoncameron.dev/', HP = 'fentez-site-9c4989hfj3j9fjff1a/hearts';
+  const HB = 'https://abacus.jasoncameron.dev/', HP = 'fentez-site-9c44g445633f3f1a/hearts';
   const av = document.querySelector('.avatar-wrap'), hc = document.getElementById('hc');
   let heart = 0, hq = 0, hout = 0, hwait = 0, hflight = 0, hfail = 0;
   try { hq = Math.min(40, Math.max(0, parseInt(localStorage.getItem('hq'), 10) || 0)); } catch (e) {}
@@ -252,7 +265,7 @@
     a.addEventListener('click', () => { tone(SCALE[4], .9, 'sine', .09); tone(SCALE[7], 1.1, 'sine', .08, .07); });
   });
 
-  const TOPIC = 'fentez-sky-7cdsfsdf3f93jf93f9a', me = Math.random().toString(36).slice(2, 8);
+  const TOPIC = 'fentez-sky-7dd3r3r3r3f356hc2f9a', me = Math.random().toString(36).slice(2, 8);
   let sent = 0;
   function pub(x, y, n) {
     const now = Date.now(); if (now - sent < 1500) return; sent = now;
